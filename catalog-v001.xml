@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ro/releases/2018-01-05b/ro.owl" uri="ro.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ncit/releases/2017-12-15/ncit.owl" uri="ncit.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1515735390138" name="http://purl.obolibrary.org/obo/ncit.owl" uri="ncit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1515735390138" name="http://purl.obolibrary.org/obo/ro.owl" uri="ro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1515735390138" name="http://www.semanticweb.org/ontologies/OCRV" uri="OCRV.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1515735390138" name="https://sbmi.uth.edu/ontology/TEO.owl" uri="TimeEventOntology.owl"/>
+    </group>
+</catalog>

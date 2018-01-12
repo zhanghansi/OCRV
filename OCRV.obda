@@ -1,0 +1,68 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/ontologies/OCRV#
+bfo:		http://www.ifomis.org/bfo/1.1/span#
+obo:		http://purl.obolibrary.org/obo/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+teo:		https://sbmi.uth.edu/ontology/TEO.owl#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[SourceDeclaration]
+sourceUri	datasource1
+connectionUrl	jdbc:mysql://localhost:3306/OCRVdatabase
+username	root
+password	
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	urn:patient
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 . 
+source		select distinct `PATIENT_ID` from `fcds_sample`
+
+mappingId	urn:tumor_diagnosis
+target		:diagnosis/{Histologic_Type_ICDO3_N522} a obo:NCIT_C15220 . 
+source		select distinct `Histologic_Type_ICDO3_N522` from `fcds_sample`
+
+mappingId	urn:temporal_instant
+target		:timeinstant/{Date_of_Diagnosis_N390} a bfo:TemporalInstant . 
+source		select distinct `Date_of_Diagnosis_N390` from `fcds_sample`
+
+mappingId	urn:diagnosis_date
+target		:relation/{ID} teo:TEO_0000007 :timeinstant/{Date_of_Diagnosis_N390} . 
+source		select `ID` , `Date_of_Diagnosis_N390` from `fcds_sample`
+
+mappingId	urn:diagnosis_relation
+target		:relation/{ID} a :OCRV_000001 . 
+source		select `ID` from `fcds_sample`
+
+mappingId	urn:diagnosis_tumor_type
+target		:relation/{ID} :OCRV_000100 :diagnosis/{Histologic_Type_ICDO3_N522} . 
+source		select `ID` , `Histologic_Type_ICDO3_N522` from `fcds_sample`
+
+mappingId	urn:patient_diagnosis_relation
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; :OCRV_000102 :relation/{ID} . 
+source		select `PATIENT_ID` , `ID` from `fcds_sample`
+
+mappingId	urn:census_tract
+target		:censustract2010/{Census_Tract_2010_N135} a :OCRV_000003 . 
+source		select distinct CONCAT(12, LPAD(`County_at_DX_N90`,3,0) , LPAD(`Census_Tract_2010_N135`,6,0)) as Census_Tract_2010_N135 from `fcds_sample`
+
+mappingId	urn:patient_censustract
+target		:patient/{PATIENT_ID} :OCRV_000103 :censustract2010/{Census_Tract_2010_N135} . 
+source		select `PATIENT_ID`, CONCAT(12, LPAD(`County_at_DX_N90`,3,0) , LPAD(`Census_Tract_2010_N135`,6,0)) as Census_Tract_2010_N135 from `fcds_sample`
+
+mappingId	urn:censustract_svi_1
+target		:censustract2010/{GEOID} obo:RO_0000086 :svi/{FL_RPL_1} . 
+source		select `GEOID`, `FL_RPL_1` from `fl_svi_percentiles`
+
+mappingId	urn:cuase_colon
+target		:cause/colon/{CAUSE_OF_DEATH_N1910} a obo:NCIT_C9242 . 
+source		select distinct RPAD(`CAUSE_OF_DEATH_N1910`,4,0) as CAUSE_OF_DEATH_N1910 from `fcds_sample` where `Vital_Status_N1760` = 0 and CAUSE_OF_DEATH_N1910 in ('1530','1531','1532','1533','1534','1535','1536','1537','1538','1539','1590','1540','1541','C260','C180','C181','C182','C183','C184','C185','C186','C187','C188','C189')
+
+mappingId	urn:relation_cause_of_death_colon
+target		:relation/{ID} :OCRV_000103 obo:NCIT_C9242 . 
+source		select  `ID` from `fcds_sample` where `Vital_Status_N1760` = 0 and RPAD(`CAUSE_OF_DEATH_N1910`,4,0) in ('1530','1531','1532','1533','1534','1535','1536','1537','1538','1539','1590','1540','1541','C260','C180','C181','C182','C183','C184','C185','C186','C187','C188','C189')
+]]
+
