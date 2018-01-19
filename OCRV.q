@@ -10,7 +10,7 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select ?diagnosis ?date where {?diagnosis teo:TEO_0000007 ?d. BIND(substr(?d,56,4) AS ?date) }
+select ?diagnosis ?d ?date where {?diagnosis teo:TEO_0000007 ?d.   ?d a bfo:TemporalInstant. BIND(substr(?d,56,4) AS ?date) }
 
 [QueryItem="patient_diagnosis_tumor"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
@@ -52,4 +52,59 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select ?p where {?p :OCRV_000102 ?d . ?d  :OCRV_000103 obo:NCIT_C9242 . }
+select ?p/2 where {?p :OCRV_000102 ?d . ?d  :OCRV_000103 obo:NCIT_C9242 . }
+
+[QueryItem="patient_single"]
+PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
+PREFIX obda: <https://w3id.org/obda/vocabulary#>
+PREFIX bfo: <http://www.ifomis.org/bfo/1.1/span#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?marital where { ?p :OCRV_000104 ?marital .  ?marital a :OCRV_000010 . }
+
+[QueryItem="patient_chemo"]
+PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
+PREFIX obda: <https://w3id.org/obda/vocabulary#>
+PREFIX bfo: <http://www.ifomis.org/bfo/1.1/span#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?p where {?p :OCRV_000105 ?procedure . ?procedure :OCRV_000106 obo:NCIT_C15632 . }
+
+[QueryItem="patient_survivalmonths"]
+PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
+PREFIX obda: <https://w3id.org/obda/vocabulary#>
+PREFIX bfo: <http://www.ifomis.org/bfo/1.1/span#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?p  ?s ?months where {?p obo:RO_0000091 ?s .  ?s  teo:TEO_0000007 ?months .}
+
+[QueryItem="BRFSS_interveiwee"]
+PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
+PREFIX obda: <https://w3id.org/obda/vocabulary#>
+PREFIX bfo: <http://www.ifomis.org/bfo/1.1/span#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?county ?weight where {{?interviewee obo:RO_0002508 obo:NCIT_C127032.}  UNION {?interviewee obo:RO_0002508 obo:NCIT_C127033 .} . {?interviewee obo:RO_0002508 obo:NCIT_C127059.}  {?interviewee :OCRV_000103 ?county ; :OCRV_000200 ?weight .}}

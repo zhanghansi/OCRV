@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/ontologies/OCRV#"
      xml:base="http://www.semanticweb.org/ontologies/OCRV"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
@@ -39,6 +40,14 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_R31 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_R31">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_R82"/>
+    </rdf:Description>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000100 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000100">
@@ -59,7 +68,7 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000102 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000102">
-        <rdfs:label xml:lang="en">HasDisease</rdfs:label>
+        <rdfs:label xml:lang="en">HasDiagnosis</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -69,6 +78,50 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000103">
         <rdfs:label xml:lang="en">LivesIn</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000104 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000104">
+        <rdfs:label xml:lang="en">HasMaritalStatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000105 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000105">
+        <rdfs:label xml:lang="en">HasProcedure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000106 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000106">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000105"/>
+        <rdfs:label xml:lang="en">HasChemoTherapy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000200 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000200">
+        <rdfs:label xml:lang="en">HasFinalWeight</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -83,10 +136,18 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCIT_C15220 -->
+    <!-- http://purl.obolibrary.org/obo/NCIT_C17177 -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C15220">
-        <owl:equivalentClass rdf:resource="https://sbmi.uth.edu/ontology/TEO.owl#Diagnosis"/>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C17177">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Disposition"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25188 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C25188">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Quality"/>
     </rdf:Description>
     
 
@@ -163,9 +224,30 @@
     
 
 
-    <!-- https://sbmi.uth.edu/ontology/TEO.owl#Diagnosis -->
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000009 -->
 
-    <rdf:Description rdf:about="https://sbmi.uth.edu/ontology/TEO.owl#Diagnosis"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25188"/>
+        <rdfs:label xml:lang="en">Unknown Marital Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000010 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25188"/>
+        <rdfs:label xml:lang="en">Single</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000011 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25150"/>
+        <rdfs:label xml:lang="en">Age at Diagnosis</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 
