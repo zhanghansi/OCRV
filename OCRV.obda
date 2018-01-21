@@ -102,34 +102,6 @@ mappingId	urn:BRFSS_interviewee
 target		:interviewee/{id} a obo:NCIT_C63762 . 
 source		select distinct `id` from `brfss_smoke`
 
-mappingId	urn:interviewee_smoke_100_cigerattes
-target		:interviewee/{id} a obo:NCIT_C63762 ; obo:RO_0002508 obo:NCIT_C127059 . 
-source		select `id` from `brfss_smoke`  where `SMOKE100` = 1
-
-mappingId	urn:smoke_100_cigerattes_answer
-target		:answer/{SMOKE100} a obo:NCIT_C127059 . 
-source		select  distinct `SMOKE100` from `brfss_smoke`  where `SMOKE100` = 1
-
-mappingId	urn:interviewee_smoke_everyday
-target		:interviewee/{id} a obo:NCIT_C63762 ; obo:RO_0002508 obo:NCIT_C127032 . 
-source		select `id` from `brfss_smoke` where `SMOKDAY2` = 1
-
-mappingId	urn:smoke_everyday_answer
-target		:answer/{SMOKDAY2} a obo:NCIT_C127032 . 
-source		select distinct `SMOKDAY2` from `brfss_smoke` where `SMOKDAY2` = 1
-
-mappingId	urn:interviewee_smoke_someday
-target		:interviewee/{id} a obo:NCIT_C63762 ; obo:RO_0002508 obo:NCIT_C127033 . 
-source		select `id` from `brfss_smoke` where `SMOKDAY2` = 2
-
-mappingId	urn:smoke_someday_answer
-target		:answer/{SMOKDAY2} a obo:NCIT_C127033 . 
-source		select distinct `SMOKDAY2` from `brfss_smoke` where `SMOKDAY2` = 2
-
-mappingId	urn:county
-target		:county/{CTYCODE1} a obo:NCIT_C107687 . 
-source		select distinct `CTYCODE1` from `brfss_smoke`
-
 mappingId	urn:interviewee_county
 target		:interviewee/{id} a obo:NCIT_C63762 ; :OCRV_000103 :county/{CTYCODE1} . 
 source		select `id` , `CTYCODE1` from `brfss_smoke`
@@ -137,5 +109,41 @@ source		select `id` , `CTYCODE1` from `brfss_smoke`
 mappingId	urn:interviewee_BRFSS_final_rate
 target		:interviewee/{id} :OCRV_000200 {_LLCPWT} . 
 source		select `id`,`_LLCPWT` from `brfss_smoke`
+
+mappingId	never married
+target		:marital/{PATIENT_ID} a obo:NCIT_C51774 . 
+source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 1
+
+mappingId	patient_marital
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; :OCRV_000104 :marital/{PATIENT_ID} . 
+source		select `PATIENT_ID` from `fcds_sample`
+
+mappingId	widowed
+target		:marital/{PATIENT_ID} a obo:NCIT_C51775 . 
+source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 5
+
+mappingId	separated
+target		:marital/{PATIENT_ID} a obo:NCIT_C51777 . 
+source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 3
+
+mappingId	divorced
+target		:marital/{PATIENT_ID} a obo:NCIT_C53262 . 
+source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 6
+
+mappingId	urn:interviewee_smoke_everyday
+target		:interviewee/{id} a obo:NCIT_C63762 ; obo:RO_0002508 :smoker/{id} . 
+source		select `id` from `brfss_smoke`
+
+mappingId	urn:smoke_everyday_answer
+target		:smoker/{id} a :OCRV_000013 . 
+source		select `id` from `brfss_smoke` where `SMOKDAY2` = 1 and `SMOKE100` = 1
+
+mappingId	urn:smoke_someday_answer
+target		:smoker/{id} a :OCRV_000014 . 
+source		select `id` from `brfss_smoke` where `SMOKDAY2` = 2 and `SMOKE100` = 1
+
+mappingId	urn:county
+target		:county/{CTYCODE1} a obo:NCIT_C107687 . 
+source		select distinct `CTYCODE1` from `brfss_smoke` where `CTYCODE1` not in (777,888,999)
 ]]
 

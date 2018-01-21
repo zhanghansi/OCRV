@@ -3,9 +3,9 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ro/releases/2018-01-05b/ro.owl" uri="ro.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/ncit/releases/2017-12-15/ncit.owl" uri="ncit.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1516396377766" name="http://purl.obolibrary.org/obo/ncit.owl" uri="ncit.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1516396377766" name="http://purl.obolibrary.org/obo/ro.owl" uri="ro.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1516396377766" name="http://www.semanticweb.org/ontologies/OCRV" uri="OCRV.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1516396377766" name="https://sbmi.uth.edu/ontology/TEO.owl" uri="TimeEventOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1516569894579" name="http://purl.obolibrary.org/obo/ncit.owl" uri="ncit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1516569894579" name="http://purl.obolibrary.org/obo/ro.owl" uri="ro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1516569894579" name="http://www.semanticweb.org/ontologies/OCRV" uri="OCRV.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1516569894579" name="https://sbmi.uth.edu/ontology/TEO.owl" uri="TimeEventOntology.owl"/>
     </group>
 </catalog>

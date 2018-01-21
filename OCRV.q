@@ -52,7 +52,7 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select ?p/2 where {?p :OCRV_000102 ?d . ?d  :OCRV_000103 obo:NCIT_C9242 . }
+select ?p where {?p :OCRV_000102 ?d . ?d  :OCRV_000103 obo:NCIT_C9242 . }
 
 [QueryItem="patient_single"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
@@ -80,6 +80,7 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+
 select ?p where {?p :OCRV_000105 ?procedure . ?procedure :OCRV_000106 obo:NCIT_C15632 . }
 
 [QueryItem="patient_survivalmonths"]
@@ -95,7 +96,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 select ?p  ?s ?months where {?p obo:RO_0000091 ?s .  ?s  teo:TEO_0000007 ?months .}
 
-[QueryItem="BRFSS_interveiwee"]
+[QueryItem="BRFSS"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
 PREFIX obda: <https://w3id.org/obda/vocabulary#>
 PREFIX bfo: <http://www.ifomis.org/bfo/1.1/span#>
@@ -107,4 +108,5 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select ?county ?weight where {{?interviewee obo:RO_0002508 obo:NCIT_C127032.}  UNION {?interviewee obo:RO_0002508 obo:NCIT_C127033 .} . {?interviewee obo:RO_0002508 obo:NCIT_C127059.}  {?interviewee :OCRV_000103 ?county ; :OCRV_000200 ?weight .}}
+
+select ?county ?weight where {?interviewee obo:RO_0002508 ?smoker . ?smoker a :OCRV_000012 . ?interviewee :OCRV_000103 ?county ; :OCRV_000200 ?weight . ?county a obo:NCIT_C107687}

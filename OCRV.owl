@@ -144,10 +144,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C19796 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C19796">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Role"/>
+    </rdf:Description>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C25188 -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C25188">
-        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Quality"/>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Role"/>
     </rdf:Description>
     
 
@@ -247,6 +255,42 @@
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000011">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25150"/>
         <rdfs:label xml:lang="en">Age at Diagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000012 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19796"/>
+        <rdfs:label xml:lang="en">BRFSS Current Smoker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000013 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012"/>
+        <rdfs:label xml:lang="en">Current Everyday Smoker and Smoked at Least 100 Cigarettes in Entire Life</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000014 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000014">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012"/>
+        <rdfs:label xml:lang="en">Current Someday Smoker and Smoked at Least 100 Cigarettes in Entire Life</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000015 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000015">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012"/>
+        <rdfs:label xml:lang="en">Smoked at Least 100 Cigarette in Entire Life</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
