@@ -125,13 +125,15 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
 PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
 
-SELECT ?patient ?year ?birthday WHERE
+SELECT ?patient ?diagnosis_year ?birth_year WHERE
 { ?patient :OCRV_000102 ?diagnosis .
   ?diagnosis a :OCRV_000001; teo:TEO_0000007 ?d.
   ?d teo:TEO_0000015 ?date.
-  BIND(year(?date) AS ?year).
+  BIND(year(?date) AS ?diagnosis_year).
   ?patient obo:RO_0000056 ?birth.
-  ?birth teo:TEO_0000007 ?birthday
+  ?birth teo:TEO_0000007 ?birthyear.
+  ?birthyear teo:TEO_0000015 ?birth_year.
+  
 }
 
 [QueryItem="test"]

@@ -187,7 +187,7 @@ target		:birth/{PATIENT_ID} a obo:NCIT_C25155 ; teo:TEO_0000007 :birthday/{Birth
 source		select distinct `PATIENT_ID`, `Birth_Year_N240` from `fcds_sample`
 
 mappingId	birth_date_string
-target		:birthday/{Birth_Year_N240} a obo:NCIT_C68615 ; teo:TEO_0000015 {Birth_Year_N240}^^xsd:gYear . 
+target		:birthday/{Birth_Year_N240} a obo:NCIT_C68615 ; teo:TEO_0000015 {Birth_Year_N240}^^xsd:integer . 
 source		select distinct `Birth_Year_N240` from `fcds_sample`
 ]]
 
