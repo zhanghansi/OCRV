@@ -22,10 +22,6 @@ oboInOwl:	http://www.geneontology.org/formats/oboInOwl#
 oboInOwl1:	ttp://www.geneontology.org/formats/oboInOwl#
 
 [MappingDeclaration] @collection [[
-mappingId	urn:patient
-target		:patient/{PATIENT_ID} a obo:NCIT_C16960 . 
-source		select distinct `PATIENT_ID` from `fcds_sample`
-
 mappingId	urn:tumor_diagnosis
 target		:diagnosis/{Histologic_Type_ICDO3_N522} a obo:NCIT_C15220 . 
 source		select distinct `Histologic_Type_ICDO3_N522` from `fcds_sample`
@@ -33,10 +29,6 @@ source		select distinct `Histologic_Type_ICDO3_N522` from `fcds_sample`
 mappingId	urn:temporal_instant
 target		:timeinstant/{Date_of_Diagnosis_N390} a bfo:TemporalInstant . 
 source		select distinct `Date_of_Diagnosis_N390` from `fcds_sample`
-
-mappingId	urn:diagnosis_date
-target		:relation/{ID} teo:TEO_0000007 :timeinstant/{Date_of_Diagnosis_N390} . 
-source		select `ID` , `Date_of_Diagnosis_N390` from `fcds_sample`
 
 mappingId	urn:diagnosis_relation
 target		:relation/{ID} a :OCRV_000001 . 
@@ -110,40 +102,92 @@ mappingId	urn:interviewee_BRFSS_final_rate
 target		:interviewee/{id} :OCRV_000200 {_LLCPWT} . 
 source		select `id`,`_LLCPWT` from `brfss_smoke`
 
-mappingId	never married
-target		:marital/{PATIENT_ID} a obo:NCIT_C51774 . 
-source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 1
-
-mappingId	patient_marital
-target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; :OCRV_000104 :marital/{PATIENT_ID} . 
-source		select `PATIENT_ID` from `fcds_sample`
-
-mappingId	widowed
-target		:marital/{PATIENT_ID} a obo:NCIT_C51775 . 
-source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 5
-
-mappingId	separated
-target		:marital/{PATIENT_ID} a obo:NCIT_C51777 . 
-source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 3
-
-mappingId	divorced
-target		:marital/{PATIENT_ID} a obo:NCIT_C53262 . 
-source		select `PATIENT_ID` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 6
-
-mappingId	urn:interviewee_smoke_everyday
-target		:interviewee/{id} a obo:NCIT_C63762 ; obo:RO_0002508 :smoker/{id} . 
-source		select `id` from `brfss_smoke`
-
-mappingId	urn:smoke_everyday_answer
-target		:smoker/{id} a :OCRV_000013 . 
-source		select `id` from `brfss_smoke` where `SMOKDAY2` = 1 and `SMOKE100` = 1
-
-mappingId	urn:smoke_someday_answer
-target		:smoker/{id} a :OCRV_000014 . 
-source		select `id` from `brfss_smoke` where `SMOKDAY2` = 2 and `SMOKE100` = 1
-
 mappingId	urn:county
 target		:county/{CTYCODE1} a obo:NCIT_C107687 . 
 source		select distinct `CTYCODE1` from `brfss_smoke` where `CTYCODE1` not in (777,888,999)
+
+mappingId	smoke entire life
+target		:smoker/{id} a :OCRV_000013 . 
+source		select `id` from `brfss_smoke` where `SMOKE100` = 1
+
+mappingId	urn:smoke_someday_answer
+target		:smoker/{id} a :OCRV_000015 . 
+source		select `id` from `brfss_smoke` where `SMOKDAY2` = 2
+
+mappingId	urn:smoke_everyday_answer
+target		:smoker/{id} a :OCRV_000014 . 
+source		select `id` from `brfss_smoke` where `SMOKDAY2` = 1
+
+mappingId	BRFSS smoker
+target		:interviewee/{id} a obo:NCIT_C63762 ; :OCRV_000107 :smoker/{id} . 
+source		select `id` from `brfss_smoke`
+
+mappingId	urn:patient
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 . 
+source		select distinct `PATIENT_ID` from `fcds_sample`
+
+mappingId	urn:interviewee_county(0)
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; :OCRV_000103 :county/{County_at_DX_N90} . 
+source		select `PATIENT_ID` , `County_at_DX_N90` from `fcds_sample`
+
+mappingId	gender
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; :OCRV_000108 :gender/{Sex_N220} . 
+source		select `PATIENT_ID`, `Sex_N220` from `fcds_sample`
+
+mappingId	male
+target		:gender/{Sex_N220} a obo:NCIT_C20197 . 
+source		select distinct `Sex_N220` from `fcds_sample` where `Sex_N220` = 1
+
+mappingId	female
+target		:gender/{Sex_N220} a obo:NCIT_C16576 . 
+source		select distinct `Sex_N220` from `fcds_sample` where `Sex_N220` = 2
+
+mappingId	urn:diagnosis_date
+target		:relation/{ID} teo:TEO_0000007 :timeinstant/{Date_of_Diagnosis_N390} . 
+source		select distinct `ID` , `Date_of_Diagnosis_N390` from `fcds_sample`
+
+mappingId	diagnosis_date_string
+target		:timeinstant/{Date_of_Diagnosis_N390} a bfo:TemporalInstant ; teo:TEO_0000015 {Date_of_Diagnosis_N390}^^xsd:dateTimeStamp . 
+source		select `PATIENT_ID`, `Date_of_Diagnosis_N390` from `fcds_sample`
+
+mappingId	patient_marital
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; :OCRV_000104 :marital/{Marital_Status_at_Dx_N150} . 
+source		select `PATIENT_ID` , `Marital_Status_at_Dx_N150` from `fcds_sample`
+
+mappingId	domestic
+target		:marital/{Marital_Status_at_Dx_N150} a obo:NCIT_C51776 . 
+source		select distinct `Marital_Status_at_Dx_N150` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 4
+
+mappingId	never married
+target		:marital/{Marital_Status_at_Dx_N150} a obo:NCIT_C51774 . 
+source		select distinct `Marital_Status_at_Dx_N150` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 1
+
+mappingId	separated
+target		:marital/{Marital_Status_at_Dx_N150} a obo:NCIT_C51777 . 
+source		select  distinct `Marital_Status_at_Dx_N150` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 3
+
+mappingId	widowed
+target		:marital/{Marital_Status_at_Dx_N150} a obo:NCIT_C51775 . 
+source		select  distinct `Marital_Status_at_Dx_N150` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 5
+
+mappingId	divorced
+target		:marital/{Marital_Status_at_Dx_N150} a obo:NCIT_C53262 . 
+source		select distinct `Marital_Status_at_Dx_N150` from `fcds_sample` where  `Marital_Status_at_Dx_N150` = 6
+
+mappingId	birth
+target		:birth/{PATIENT_ID} a obo:NCIT_C25155 . 
+source		select distinct `PATIENT_ID` from `fcds_sample`
+
+mappingId	patient_birth
+target		:patient/{PATIENT_ID} a obo:NCIT_C16960 ; obo:RO_0000056 :birth/{PATIENT_ID} . 
+source		select distinct `PATIENT_ID` from `fcds_sample`
+
+mappingId	birth_date
+target		:birth/{PATIENT_ID} a obo:NCIT_C25155 ; teo:TEO_0000007 :birthday/{Birth_Year_N240} . 
+source		select distinct `PATIENT_ID`, `Birth_Year_N240` from `fcds_sample`
+
+mappingId	birth_date_string
+target		:birthday/{Birth_Year_N240} a obo:NCIT_C68615 ; teo:TEO_0000015 {Birth_Year_N240}^^xsd:gYear . 
+source		select distinct `Birth_Year_N240` from `fcds_sample`
 ]]
 

@@ -106,6 +106,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000107 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000107">
+        <rdfs:label xml:lang="en">HasSmokingStatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000108 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000108">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <rdfs:label xml:lang="en">has gender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -136,6 +153,36 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCIT_C127032 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C127032">
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCIT_C127033"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C127033 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C127033"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16576 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C16576">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C17357"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C16960 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C16960">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16960"/>
+    </rdf:Description>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C17177 -->
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C17177">
@@ -148,6 +195,14 @@
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C19796">
         <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Role"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C20197 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C20197">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C17357"/>
     </rdf:Description>
     
 
@@ -263,7 +318,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19796"/>
-        <rdfs:label xml:lang="en">BRFSS Current Smoker</rdfs:label>
+        <rdfs:label xml:lang="en">BRFSS_Current_Smoker</rdfs:label>
     </owl:Class>
     
 
@@ -271,8 +326,8 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000013 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012"/>
-        <rdfs:label xml:lang="en">Current Everyday Smoker and Smoked at Least 100 Cigarettes in Entire Life</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19796"/>
+        <rdfs:label xml:lang="en">Smoked at Least 100 Cigarettes in Entire Life</rdfs:label>
     </owl:Class>
     
 
@@ -281,7 +336,13 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000014">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012"/>
-        <rdfs:label xml:lang="en">Current Someday Smoker and Smoked at Least 100 Cigarettes in Entire Life</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000107"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Current Someday Smoker</rdfs:label>
     </owl:Class>
     
 
@@ -290,8 +351,58 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000015">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012"/>
-        <rdfs:label xml:lang="en">Smoked at Least 100 Cigarette in Entire Life</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000107"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Current Everyday Smoker</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#smoker1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/OCRV#smoker1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#smoker2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/OCRV#smoker2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000014"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#smoker3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/OCRV#smoker3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#smoker4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/OCRV#smoker4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
