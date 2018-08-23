@@ -2,10 +2,10 @@
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
 PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
 
-SELECT ?diagnosis ?date ?year WHERE
-{ ?diagnosis a :OCRV_000001; teo:TEO_0000007 ?d.
-  ?d teo:TEO_0000015 ?date.
-  BIND(year(?date) AS ?year).}
+SELECT ?diagnosis_realtion ?diagnosis_date ?diagnosis_year WHERE
+{ ?diagnosis_realtion a :OCRV_000001; teo:TEO_0000007 ?d.
+  ?d teo:TEO_0000015 ?diagnosis_date.
+  BIND(year(?diagnosis_date) AS ?diagnosis_year).}
 
 [QueryItem="patient_diagnosis_tumor"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
@@ -25,7 +25,7 @@ select ?relation ?p ?tumor_type  ?diagnosis_date where {?p :OCRV_000102 ?relatio
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
 
-select ?p ?censustract ?svi_1  where {?p :OCRV_000103 ?censustract. ?censustract obo:RO_0000086 ?svi_1 . }
+select ?patient ?censu_stract ?SVI_socioeconomic_status  where {?patient :OCRV_000103 ?censu_stract. ?censu_stract obo:RO_0000086 ?SVI_socioeconomic_status . }
 
 [QueryItem="patient_death_colon"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
@@ -53,7 +53,7 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select ?p ?marital where { ?p :OCRV_000104 ?marital .  ?marital a :OCRV_000010 . }
+select ?patient ?marital_status where { ?patient :OCRV_000104 ?marital_status .  ?marital_status a :OCRV_000010 . }
 
 [QueryItem="patient_chemo"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
@@ -96,7 +96,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
-select ?county ?weight where {?interviewee :OCRV_000107 ?smoker . ?smoker a :OCRV_000012 . ?interviewee :OCRV_000103 ?county ; :OCRV_000200 ?weight . ?county a obo:NCIT_C107687}
+select ?county ?BRFSS_final_weight where {?interviewee :OCRV_000107 ?smoker . ?smoker a :OCRV_000012 . ?interviewee :OCRV_000103 ?county ; :OCRV_000200 ?BRFSS_final_weight . ?county a obo:NCIT_C107687}
 
 [QueryItem="smoker"]
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
@@ -117,31 +117,21 @@ select ?interviewee  where {  ?interviewee :OCRV_000107 ?smoker . ?smoker a :OCR
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
 
-SELECT ?patient ?gender WHERE 
-{?patient :OCRV_000108 ?gender.}
+SELECT ?patient ?biological_sex WHERE 
+{?patient :OCRV_000108 ?biological_sex.}
 
 [QueryItem="quality check"]
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
 PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
 
-SELECT ?patient ?diagnosis_year ?birth_year WHERE
+SELECT ?patient ?diagnosis_year ?birth_year ?age_of_diangosis WHERE
 { ?patient :OCRV_000102 ?diagnosis .
   ?diagnosis a :OCRV_000001; teo:TEO_0000007 ?d.
   ?d teo:TEO_0000015 ?date.
   BIND(year(?date) AS ?diagnosis_year).
   ?patient obo:RO_0000056 ?birth.
-  ?birth teo:TEO_0000007 ?birthyear.
-  ?birthyear teo:TEO_0000015 ?birth_year.
-  
-}
-
-[QueryItem="test"]
-PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX : <http://www.semanticweb.org/ontologies/OCRV#>
-PREFIX teo: <https://sbmi.uth.edu/ontology/TEO.owl#>
-
-SELECT * WHERE
-{ 
-  ?d teo:TEO_0000015 ?date. 
+  ?birth teo:TEO_0000007 ?year_of_birth.
+  ?year_of_birth teo:TEO_0000015 ?birth_year.
+  BIND(?diagnosis_year-?birth_year AS ?age_of_diangosis)
 }

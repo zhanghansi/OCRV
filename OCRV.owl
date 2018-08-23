@@ -25,6 +25,13 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ncit/releases/2017-12-15/ncit.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2018-01-05b/ro.owl"/>
         <owl:imports rdf:resource="https://sbmi.uth.edu/ontology/TEO.owl"/>
+        <dc:contributor xml:lang="en">Hansi Zhang</dc:contributor>
+        <owl:versionInfo xml:lang="en">2018-2-14</owl:versionInfo>
+        <dc:contributor xml:lang="en">Jiang Bian</dc:contributor>
+        <rdfs:comment xml:lang="en">This ontology is used for semantic data integration
+linking five data sets that cover both individual
+and contextual level factors for the purpose of assessing
+the association of predictors of interest with cancer survival.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -48,10 +55,84 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000034 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000034">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has drinking status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000037 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000037">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has race</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000038 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000038">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has ethnicity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000039 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000039">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has survival status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000040 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000040">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has mental health condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000041 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000041">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has physical health condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000043 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000043">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+        <obo:IAO_0000118>has social vulnerability status</obo:IAO_0000118>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has svi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000100 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000100">
-        <rdfs:label xml:lang="en">HasTumorDisease</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has tumor type</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -60,7 +141,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000101">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:label xml:lang="en">HasDeathCause</rdfs:label>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has death cause</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -68,7 +150,8 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000102 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000102">
-        <rdfs:label xml:lang="en">HasDiagnosis</rdfs:label>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has diagnosis</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -76,7 +159,8 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000103 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000103">
-        <rdfs:label xml:lang="en">LivesIn</rdfs:label>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">lives in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -84,7 +168,9 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000104 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000104">
-        <rdfs:label xml:lang="en">HasMaritalStatus</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has marital status</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -92,7 +178,8 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000105 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000105">
-        <rdfs:label xml:lang="en">HasProcedure</rdfs:label>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has procedure</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -101,7 +188,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000106">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000105"/>
-        <rdfs:label xml:lang="en">HasChemoTherapy</rdfs:label>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has chemotherapy</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -109,7 +197,9 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000107 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000107">
-        <rdfs:label xml:lang="en">HasSmokingStatus</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has smoking status</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -118,8 +208,17 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000108">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-        <rdfs:label xml:lang="en">has gender</rdfs:label>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">has biological sex</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://sbmi.uth.edu/ontology/TEO.owl#TEO_0000007 -->
+
+    <rdf:Description rdf:about="https://sbmi.uth.edu/ontology/TEO.owl#TEO_0000007">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
     
 
 
@@ -137,7 +236,10 @@
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000200 -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000200">
-        <rdfs:label xml:lang="en">HasFinalWeight</rdfs:label>
+        <obo:IAO_0000115>BRFSS final weight = Design Weight * Raking Adjustments</obo:IAO_0000115>
+        <dc:creator>Hansi Zhang</dc:creator>
+        <dc:source>BRFSS</dc:source>
+        <rdfs:label xml:lang="en">has BRFSS final weight</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -150,6 +252,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C126378 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C126378">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Role"/>
+    </rdf:Description>
     
 
 
@@ -215,6 +325,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000000 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C126378"/>
+        <obo:IAO_0000115 xml:lang="en">a male who drinks more than 14 standard drinks per week or a woman who drinks more than 7 standard drinks per week.</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Behavioral Risk Factor Surveillance System (BRFSS)</dc:source>
+        <rdfs:label xml:lang="en">BRFSS heavy drinker</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000001 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000001">
@@ -246,7 +368,10 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000004">
         <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Quality"/>
-        <rdfs:label xml:lang="en">SocialVulnerabilityIndex</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Social vulnerability refers to the inability of people, organizations, and societies to withstand adverse impacts from multiple stressors to which they are exposed</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Wikipedia</dc:source>
+        <rdfs:label xml:lang="en">social vulnerability index</rdfs:label>
     </owl:Class>
     
 
@@ -255,7 +380,9 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000005">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000004"/>
-        <rdfs:label xml:lang="en">HousingTransportation</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a type of social vulnnerability that describe the housring and transporation condition of the community</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">SVI housing and transportation</rdfs:label>
     </owl:Class>
     
 
@@ -264,7 +391,9 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000006">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000004"/>
-        <rdfs:label xml:lang="en">RaceEthnicityLanguage</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a type of social vulnnerability that describe the race,ethnicity and language of the community</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">SVI minority status and languages</rdfs:label>
     </owl:Class>
     
 
@@ -273,7 +402,10 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000007">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000004"/>
-        <rdfs:label xml:lang="en">HouseholdCompositionDiability</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a type of social vulnerability that describe the household according to certain characteristics of its membership, such as age, relationship to the head of the household, and number of marital pairs or nuclear families it contains for the community</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">wikipeida</dc:source>
+        <rdfs:label xml:lang="en">SVI household composition and disability</rdfs:label>
     </owl:Class>
     
 
@@ -282,7 +414,10 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000008">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000004"/>
-        <rdfs:label xml:lang="en">Socioecnomic</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a type of social vulnerability that describe economic and sociolgoical measurement of the community</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:creator xml:lang="en">Wikipedia</dc:creator>
+        <rdfs:label xml:lang="en">SVI socioeconomic status</rdfs:label>
     </owl:Class>
     
 
@@ -291,7 +426,9 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000009">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25188"/>
-        <rdfs:label xml:lang="en">Unknown Marital Status</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">the marital status of a person is not know</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">unknown marital status</rdfs:label>
     </owl:Class>
     
 
@@ -300,7 +437,10 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25188"/>
-        <rdfs:label xml:lang="en">Single</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a type of marital status of a person who is unmarried or not in a romantic relationship</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Wikipedia</dc:source>
+        <rdfs:label xml:lang="en">single</rdfs:label>
     </owl:Class>
     
 
@@ -318,7 +458,10 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000012">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19796"/>
-        <rdfs:label xml:lang="en">BRFSS_Current_Smoker</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a type of somking status that describe someone who has smoked greater than 100 cigarettes  in their lifetime and has smoked in the last 28 days</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Behavioral Risk Factor Surveillance System (BRFSS)</dc:source>
+        <rdfs:label xml:lang="en">BRFSS current smoker</rdfs:label>
     </owl:Class>
     
 
@@ -327,7 +470,9 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C19796"/>
-        <rdfs:label xml:lang="en">Smoked at Least 100 Cigarettes in Entire Life</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">an adult who has smoked 100 cigarettes in his or her lifetime</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">BRFSS smoker who smoked at least 100 cigarettes in the entire life</rdfs:label>
     </owl:Class>
     
 
@@ -342,7 +487,10 @@
                 <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">Current Someday Smoker</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Behavioral Risk Factor Surveillance System (BRFSS)</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">a current smoker who smokes now, but does not smoke every day.</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <rdfs:label xml:lang="en">BRFSS current someday smoker</rdfs:label>
     </owl:Class>
     
 
@@ -357,7 +505,200 @@
                 <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">Current Everyday Smoker</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a current smoker who somkes everyday</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Behavioral Risk Factor Surveillance System (BRFSS)</dc:source>
+        <rdfs:label xml:lang="en">BRFSS current everyday smoker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000016 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000016">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000000"/>
+        <obo:IAO_0000115 xml:lang="en">a male heavy drinker who reported having more than 14 drinks per week</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Behavioral Risk Factor Surveillance System (BRFSS)</dc:source>
+        <rdfs:label xml:lang="en">BRFSS male heavy drinker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000017 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000017">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000000"/>
+        <obo:IAO_0000115 xml:lang="en">a female heavy drinker who reported having more than 14 drinks per week</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Behavioral Risk Factor Surveillance System (BRFSS)</dc:source>
+        <rdfs:label xml:lang="en">BRFSS female heavy drinker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000018 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C53336"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">United States Census Bureau</dc:source>
+        <rdfs:label xml:lang="en">family poverty rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000020 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16839"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">County Health Ranking and Roadmaps</dc:source>
+        <rdfs:label xml:lang="en">adult mental health status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000021 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000021">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C53335"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">United States Census Bureau</dc:source>
+        <rdfs:label xml:lang="en">high school compeletion rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000022 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000022">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C106492"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">County Health Ranking and Roadmaps</dc:source>
+        <rdfs:label xml:lang="en">adult physical health status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000023 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25162"/>
+        <obo:IAO_0000115 xml:lang="en">a code system used to classify U.S. census tracts using measures of population density, urbanization, and daily commuting.</obo:IAO_0000115>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">rural-urban commuting area codes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000024 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000024">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">metropolitan area core</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000025 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000025">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">metropolitan area high commuting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000026 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000026">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">metropolitan area low commuting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000027 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000027">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">micropolitan area core</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000028 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000028">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">micropolitan high commuting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000029 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000029">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">micropolitan low commuting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000030 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000030">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">small town core</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000031 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000031">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">small town high commuting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000032 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000032">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">small town low commuting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/OCRV#OCRV_000033 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000033">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000023"/>
+        <dc:creator xml:lang="en">Hansi Zhang</dc:creator>
+        <dc:source xml:lang="en">Economic Research Service, U.S. Department of Agriculture</dc:source>
+        <rdfs:label xml:lang="en">rural areas</rdfs:label>
     </owl:Class>
     
 
@@ -403,6 +744,46 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/OCRV#smoker4">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/OCRV#OCRV_000013"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_R88">
+        <obo:IAO_0000118>has tumor stage</obo:IAO_0000118>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000024"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000025"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000026"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000027"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000028"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000029"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000030"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000031"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000032"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/OCRV#OCRV_000033"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
