@@ -13,11 +13,31 @@ The OCRV was constructed iteratively using the [Protégé tool](https://protege.
 
 Our semantic data integration workflow is based on an ontology-based data access (OBDA) model and the [Ontop framework](https://ontop.inf.unibz.it/). The user can post data integration requests according to OCRV, then the requests were converted into SPARQL queries. The OBDA model consists of a set of semantic mappings that specify how source data are related to the entities in the ontology.
 
+## Installing
+
+### Method I - Bundle installation
+
+* [Download Protege bundled with -ontopPro-](https://sourceforge.net/projects/ontop4obda/files/). Then run Protege (run.bat file on Windows, and sh run.sh command from terminal on Linux/Mac). Note that Java 8 is required.
+
+* Unzip ncit.owl.zip file.  The original file is too large, therefore, we zip it before upload to Github.
+
+* Open OCRV.owl file from Protege
+
+### Method II - Installation or update of ontop plugin
+
+* Install Protégé version 5.  Follow these [i]nstructions](https://protegewiki.stanford.edu/wiki/Protege-OWL_4_FAQ#How_do_I_install_Protege-OWL.3F) to install Protégé in your machine.
+
+* start Protege
+
+* Install or update Ontop OBDA Protege Plugin. If you have the automatic check for updates on startup on, you can select the ontop plugin between the suggested plugins. Otherwise, from the menu bar select File -> Check for plugins... and Select the ontop plugin. If ontop is not visible between the available plugins you already have the latest version installed.
+
+* Open Protege's Window Menu, and activate the ontop tabs.
+
+* Open OCRV.owl file from Protege
+
 
 ## Built With
 * [ontop](https://github.com/ontop/ontop/wiki/Easy-Tutorial%3A-Using-Ontop-from-Protege) - an easy tutorial of using ontop from Protege
-
-* [MySQL](https://www.mysql.com/) - an open-source relational database management system (RDBMS)
 
 ## Authors
 
