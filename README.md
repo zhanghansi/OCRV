@@ -22,5 +22,5 @@ Our semantic data integration workflow is based on an ontology-based data access
 ## Authors
 
 * **Hansi Zhang**
-* **Bian Jiang**
+* **Jiang Bian**
 * **Yi Guo**
