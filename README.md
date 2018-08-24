@@ -11,5 +11,16 @@ The OCRV was built for integrating and unifying multi-level predictors of cancer
 
 The OCRV was constructed iteratively using the [Protégé tool](https://protege.stanford.edu/). We used the BFO as the upper-level ontology and imported the NCIt and the TEO as the foundation for creating the OCRV. Besides reusing terms in existing ontologies, we also created entities (i.e., classes, object properties, and datatype properties) based on the data analysis needs.
 
-## OBDA model
 Our semantic data integration workflow is based on an ontology-based data access (OBDA) model and the [Ontop framework](https://ontop.inf.unibz.it/). The user can post data integration requests according to OCRV, then the requests were converted into SPARQL queries. The OBDA model consists of a set of semantic mappings that specify how source data are related to the entities in the ontology.
+
+
+## Built With
+* [ontop](https://github.com/ontop/ontop/wiki/Easy-Tutorial%3A-Using-Ontop-from-Protege) - an easy tutorial of using ontop from Protege
+
+* [MySQL](https://www.mysql.com/) - an open-source relational database management system (RDBMS)
+
+## Authors
+
+* **Hansi Zhang**
+* **Bian Jiang**
+* **Yi Guo**
