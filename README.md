@@ -27,9 +27,7 @@ Our semantic data integration workflow is based on an ontology-based data access
 
 * Install Protégé version 5.  Follow these [instructions](https://protegewiki.stanford.edu/wiki/Protege-OWL_4_FAQ#How_do_I_install_Protege-OWL.3F) to install Protégé in your machine.
 
-* start Protege
-
-* Install or update Ontop OBDA Protege Plugin. If you have the automatic check for updates on startup on, you can select the ontop plugin between the suggested plugins. Otherwise, from the menu bar select File -> Check for plugins... and Select the ontop plugin. If ontop is not visible between the available plugins you already have the latest version installed.
+* Start Protégé and install or update Ontop OBDA Protege Plugin. If you have the automatic check for updates on startup on, you can select the ontop plugin between the suggested plugins. Otherwise, from the menu bar select File -> Check for plugins... and Select the ontop plugin. If ontop is not visible between the available plugins you already have the latest version installed.
 
 * Open Protege's Window Menu, and activate the ontop tabs.
 
