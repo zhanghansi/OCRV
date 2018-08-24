@@ -25,7 +25,7 @@ Our semantic data integration workflow is based on an ontology-based data access
 
 ### Method II - Installation or update of ontop plugin
 
-* Install Protégé version 5.  Follow these [i]nstructions](https://protegewiki.stanford.edu/wiki/Protege-OWL_4_FAQ#How_do_I_install_Protege-OWL.3F) to install Protégé in your machine.
+* Install Protégé version 5.  Follow these [instructions](https://protegewiki.stanford.edu/wiki/Protege-OWL_4_FAQ#How_do_I_install_Protege-OWL.3F) to install Protégé in your machine.
 
 * start Protege
 
